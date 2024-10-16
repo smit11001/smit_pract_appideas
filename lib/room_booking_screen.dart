@@ -1,73 +1,4 @@
-// import 'package:flutter/material.dart';
-//
-// import 'Model/member_model.dart';
-// import 'Model/room_model.dart';
-// import 'Widgets/room_widget.dart';
-//
-// class RoomBookingScreen extends StatefulWidget {
-//   const RoomBookingScreen({super.key});
-//
-//   @override
-//   State<RoomBookingScreen> createState() => _RoomBookingScreenState();
-// }
-//
-// class _RoomBookingScreenState extends State<RoomBookingScreen> {
-//   List<Room> rooms = [];
-//
-//   void _addRoom() {
-//     setState(() {
-//       rooms.add(Room(id: 'Room ${rooms.length + 1}', members: []));
-//     });
-//   }
-//
-//   void _addMemberToRoom(int roomIndex, Member member) {
-//     setState(() {
-//       if (rooms[roomIndex].members.length < 3) {
-//         rooms[roomIndex].members.add(member);
-//       } else {
-//         ScaffoldMessenger.of(context).showSnackBar(
-//             SnackBar(content: Text('Maximum 3 members allowed per room'))
-//         );
-//       }
-//     });
-//   }
-//
-//   void _removeMemberFromRoom(int roomIndex, Member member) {
-//     setState(() {
-//       rooms[roomIndex].members.remove(member);
-//       // If the removed member was a pet, update the pet status for the room.
-//       if (member.isPet) {
-//         rooms[roomIndex].hasPet = false;
-//       }
-//     });
-//   }
-//
-//   void _onSubmit() {
-//
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Room Booking')),
-//       body: ListView.builder(
-//         itemCount: rooms.length,
-//         itemBuilder: (context, index) {
-//           return RoomWidget(
-//             petOptionAvailable: rooms.every((r) => !r.hasPet),
-//             room: rooms[index],
-//             addMember: (member) => _addMemberToRoom(index, member),
-//             removeMember: (member) => _removeMemberFromRoom(index, member),
-//           );
-//         },
-//       ),
-//       // floatingActionButton: FloatingActionButton(
-//       //   onPressed: _addRoom,
-//       //   child: Icon(Icons.add),
-//       // ),
-//     );
-//   }
-// }
+
 import 'package:flutter/material.dart';
 import 'Model/member_model.dart';
 import 'Model/room_model.dart';
@@ -127,7 +58,6 @@ class _RoomBookingScreenState extends State<RoomBookingScreen> {
       return;
     }
 
-    // Show the dialog with the submitted data
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -172,7 +102,6 @@ class _RoomBookingScreenState extends State<RoomBookingScreen> {
         );
       },
     );
-    // Show a success message
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Submitted Successfully!')),
     );
