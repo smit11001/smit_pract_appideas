@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "348745520427",
+    "project_id": "room-booking-app-437ef",
+    "storage_bucket": "room-booking-app-437ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348745520427:android:b897891a9b34d4482d616e",
+        "android_client_info": {
+          "package_name": "com.example.smit_pract_appideas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5lkXu7a76Fsufrrki1LUdrDZI7F49iZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
