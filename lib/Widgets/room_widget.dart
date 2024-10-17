@@ -24,7 +24,6 @@ class RoomWidget extends StatefulWidget {
 
 class _RoomWidgetState extends State<RoomWidget> {
   DateTime selectedDate = DateTime.now();
-  TextEditingController _dateController = TextEditingController();
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _dobController = TextEditingController();
@@ -66,7 +65,7 @@ class _RoomWidgetState extends State<RoomWidget> {
 
   @override
   void initState() {
-    _dateController.text = "${selectedDate.toLocal()}".split(' ')[0];
+    _dobController.text = "${selectedDate.toLocal()}".split(' ')[0];
     super.initState();
   }
 
@@ -124,7 +123,7 @@ class _RoomWidgetState extends State<RoomWidget> {
                 hintText: 'MM/DD/YYYY',
                 suffixIcon: IconButton(
                   onPressed: () {
-                  // _selectDate(context);
+                  _selectDate(context);
                   },
                   icon: Icon(Icons.calendar_month),
                     )
@@ -161,19 +160,19 @@ class _RoomWidgetState extends State<RoomWidget> {
     );
   }
 
-  // Future<void> _selectDate(BuildContext context) async {
-  //   final DateTime? picked = await showDatePicker(
-  //     context: context,
-  //     initialDate: selectedDate,
-  //     firstDate: DateTime(2024),
-  //     lastDate: DateTime(2070),
-  //   );
-  //   if (picked != null && picked != selectedDate) {
-  //     setState(() {
-  //       selectedDate = picked;
-  //       _dateController.text = "${selectedDate.toLocal()}".split(' ')[0]; // Update the TextField with the selected date
-  //     });
-  //   }
-  // }
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2024),
+      lastDate: DateTime(2070),
+    );
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+        _dobController.text = "${selectedDate.toLocal()}".split(' ')[0]; // Update the TextField with the selected date
+      });
+    }
+  }
 
 }

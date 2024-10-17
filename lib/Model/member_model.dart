@@ -1,11 +1,3 @@
-// class Member {
-//   String name;
-//   int age;
-//   bool isChild;
-//   bool isPet;
-//
-//   Member({required this.name, required this.age, this.isChild = false, this.isPet = false});
-// }
 class Member {
   String firstName;
   String lastName;
